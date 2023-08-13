@@ -1,0 +1,188 @@
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  width: 50%;
+  margin: auto;
+  border: 3px solid inherit;
+}
+
+tr {
+  text-align: left;
+}
+
+table td {
+  font-size: 0.9rem !important;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  text-align: center;
+}
+
+/* map and marker popup */
+.map {
+  width: 100%;
+  max-width: 1110px;
+  height: 50vh;
+  max-height: 1000px;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.leaflet-popup-tip {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  font-size: 0.8rem !important;
+}
+
+/* map card name & flag */
+.country-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.country-name span {
+  font-weight: bold;
+  width: 100%;
+}
+.country-name img {
+  width: 100%;
+}
+
+.flag {
+  min-width: 150px;
+  max-width: 400px;
+}
+
+/* form */
+form#country-form input {
+  margin-bottom: 1rem;
+}
+
+/* cards */
+.card {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+/* modals */
+.modal {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.modal-content {
+  margin: 10% auto auto;
+  max-width: 500px;
+}
+
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+
+/* Main loader */
+.main-loader-container {
+  background-color: #4E5D6C;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.main-loader {
+  border: 16px solid #ffc39c; /* Light grey */
+  border-top: 16px solid #bd5916;
+  border-bottom: 16px solid #bd5916;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* media */
+
+@media screen and (min-width: 768px) {
+  .country-name {
+    flex-direction: row;
+  }
+
+  .country-name span {
+    width: 75%;
+  }
+  .country-name img {
+    width: 25%;
+  }
+
+  table td {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  form#country-form {
+    margin: 2rem auto !important;
+  }
+
+  div#display {
+    display: grid;
+    grid: repeat(2, auto) / repeat(2, 1fr);
+  }
+
+  .card-map {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
+  .card-nam {
+    grid-area: 2 / 1 / span 1 / span 1;
+  }
+  .card-geo {
+    grid-area: 1 /2 / span 1 / span 1;
+  }
+  .card-eco {
+    grid-area: 2 / 2 / span 1 / span 1;
+  }
+
+  div#display .loader {
+    grid-area: 1 / 1 / span 2 / span 2;
+  }
+}
